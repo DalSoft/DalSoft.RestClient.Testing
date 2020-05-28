@@ -5,7 +5,7 @@
       * Extends DalSoft RestClient to Make testing Rest API's or anything HTTP trivial.
       * Use DalSoft RestClient with ASP.NET Core In-Memory Test Server for integration tests.
     </Description>
-    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionPrefix>1.0.1</VersionPrefix>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>DalSoft.RestClient.Testing</AssemblyName>
     <PackageId>DalSoft.RestClient.Testing</PackageId>
@@ -13,7 +13,6 @@
     <Owners>DalSoft</Owners>
     <Authors>DalSoft</Authors>
     <PackageReleaseNotes>
-      *Support for Verify extension
       * Support for Integration Testing using ASP.NET Core In-Memory Test Server
     </PackageReleaseNotes>
     <PackageIconUrl>https://dalsoft.co.uk/images/icon.png</PackageIconUrl>
