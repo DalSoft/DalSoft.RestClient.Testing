@@ -138,6 +138,6 @@ public class MockRestClientFactory : IRestClientFactory
 
 RestClient targets .NET Standard 2.0 therefore **supports Windows, Linux, Mac and Xamarin (iOS, Android and UWP)**.
 
-TestServer works with .NET Core 1.0 - 2.2
-WebApplicationFactory works with .NET Core  2.1 - 2.2
+TestServer works with .NET Core 1.0 - 3.1
+WebApplicationFactory works with .NET Core  2.1 - 3.1
 

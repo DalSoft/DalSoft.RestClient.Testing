@@ -2,18 +2,17 @@
 
   <PropertyGroup>
     <Description>
-      * Extends DalSoft RestClient to Make testing Rest API's or anything HTTP trivial.
-      * Use DalSoft RestClient with ASP.NET Core In-Memory Test Server for integration tests.
+      Use DalSoft.RestClient with ASP.NET Core In-Memory Test Server for integration tests.
     </Description>
-    <VersionPrefix>1.0.1</VersionPrefix>
+    <VersionPrefix>4.3.0</VersionPrefix>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>DalSoft.RestClient.Testing</AssemblyName>
     <PackageId>DalSoft.RestClient.Testing</PackageId>
-    <PackageTags>Testing;HTTP;Rest Client;RestClient;REST;Client;JSON;Dynamic;WebApi;HttpClient;Core</PackageTags>
+    <PackageTags>Testing;WebApplicationFactory;Microsoft.AspNetCore.Mvc.Testing;REST API Testing;HTTP Testing;Rest Client;RestClient;REST;Client;JSON;Dynamic;WebApi;HttpClient;</PackageTags>
     <Owners>DalSoft</Owners>
     <Authors>DalSoft</Authors>
     <PackageReleaseNotes>
-      * Support for Integration Testing using ASP.NET Core In-Memory Test Server
+      * Upgraded DalSoft.RestClient version. Made Version numbers match
     </PackageReleaseNotes>
     <PackageIconUrl>https://dalsoft.co.uk/images/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/DalSoft/DalSoft.RestClient.Testing</PackageProjectUrl>
@@ -23,7 +22,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DalSoft.RestClient" Version="4.1.0" />
+    <PackageReference Include="DalSoft.RestClient" Version="4.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="2.2.0" />
   </ItemGroup>
 
