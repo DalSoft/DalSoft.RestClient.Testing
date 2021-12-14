@@ -5,7 +5,7 @@ namespace DalSoft.RestClient.Testing
     {
         public static RestClient CreateRestClient(this TestServer server, Config restClientConfig = null, Headers defaultRequestHeaders = null)
         {
-            restClientConfig = restClientConfig ?? new Config();
+            restClientConfig ??= new Config();
             restClientConfig.UseHandler(server.CreateHandler());
             return new RestClient(server.BaseAddress.ToString(), defaultRequestHeaders, restClientConfig);
         }

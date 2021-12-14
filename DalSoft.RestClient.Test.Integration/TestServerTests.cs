@@ -29,5 +29,24 @@ namespace DalSoft.RestClient.Test.Integration
                 .Verify<List<Repository>>(r => r.FirstOrDefault().name != null);
 
         }
+        
+        [Fact]
+        public async Task TestServer_VerifyingResponseUsingCreateRestClientWithCustomHandler_ShouldVerifyResponseAsExpected()
+        {
+            var builder = new WebHostBuilder()
+                .UseStartup<Startup>(); // just an example for real use a Fixture
+
+            var testServer = new TestServer(builder);
+
+            var client = testServer.CreateRestClient(new Config().UseNoDefaultHandlers().UseUnitTestHandler(_ => new HttpResponseMessage { Content = new StringContent("Handler has been called") }));
+
+            var result = await client
+                .Resource("examples/createclient")
+                .Get()
+                .Act<string>(x =>
+                {
+                    Assert.Equal("Handler has been called", x);
+                });
+        }
     }
 }

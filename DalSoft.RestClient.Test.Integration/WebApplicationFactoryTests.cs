@@ -22,7 +22,7 @@ namespace DalSoft.RestClient.Test.Integration
         }
 
         [Fact]
-        public async Task TestServer_VerifyingResponseUsingCreateRestClient_ShouldVerifyResponseAsExpected()
+        public async Task WebApplicationFactory_VerifyingResponseUsingCreateRestClient_ShouldVerifyResponseAsExpected()
         {
             var client = _factory.WithWebHostBuilder(builder =>
             {
@@ -39,5 +39,28 @@ namespace DalSoft.RestClient.Test.Integration
                     .Verify<List<Repository>>(repositories => repositories.FirstOrDefault().name == "Hello World")
                     .Verify<HttpResponseMessage>(message => message.RequestMessage.RequestUri.ToString() == "http://localhost/examples/createclient");
         }
+        
+        [Fact]
+        public async Task WebApplicationFactory_VerifyingResponseUsingCreateRestClientWithCustomHandler_ShouldVerifyResponseAsExpected()
+        {
+            var client = _factory.WithWebHostBuilder(builder =>
+            {
+                builder.ConfigureServices(services =>
+                {
+                    services.AddSingleton<IRestClientFactory>(provider => new MockRestClientFactory());
+                });
+            }).CreateRestClient(new Config()
+                .UseNoDefaultHandlers()
+                .UseUnitTestHandler(_ => new HttpResponseMessage { Content = new StringContent("Handler has been called") }));
+
+            var result = await client
+                .Resource("examples/createclient")
+                .Get()
+                .Act<string>(x =>
+                {
+                    Assert.Equal("Handler has been called", x);
+                });
+        }
+        
     }
 }

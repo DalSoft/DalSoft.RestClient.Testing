@@ -4,15 +4,17 @@
     <Description>
       Use DalSoft.RestClient with ASP.NET Core In-Memory Test Server for integration tests.
     </Description>
-    <VersionPrefix>4.3.0</VersionPrefix>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <VersionPrefix>4.4.1</VersionPrefix>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <AssemblyName>DalSoft.RestClient.Testing</AssemblyName>
     <PackageId>DalSoft.RestClient.Testing</PackageId>
     <PackageTags>Testing;WebApplicationFactory;Microsoft.AspNetCore.Mvc.Testing;REST API Testing;HTTP Testing;Rest Client;RestClient;REST;Client;JSON;Dynamic;WebApi;HttpClient;</PackageTags>
     <Owners>DalSoft</Owners>
     <Authors>DalSoft</Authors>
     <PackageReleaseNotes>
-      * Upgraded DalSoft.RestClient version. Made Version numbers match
+      * Upgraded DalSoft.RestClient version.
+      * Updated to target net5.0
+      * Fixed bug where RestClient handlers where not being passed to the Test Server Rest Client
     </PackageReleaseNotes>
     <PackageIconUrl>https://dalsoft.co.uk/images/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/DalSoft/DalSoft.RestClient.Testing</PackageProjectUrl>
@@ -22,8 +24,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DalSoft.RestClient" Version="4.3.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="2.2.0" />
+    <PackageReference Include="DalSoft.RestClient" Version="4.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.21" />
   </ItemGroup>
 
 </Project>

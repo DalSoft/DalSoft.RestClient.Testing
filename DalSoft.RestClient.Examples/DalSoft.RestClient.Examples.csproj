@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <!--- To upgrade change TargetFramework to net6.0 and remove <PackageReference Include="Microsoft.AspNetCore.App" /> -->
+  
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DalSoft.RestClient" Version="4.3.0" />
+    <PackageReference Include="DalSoft.RestClient" Version="4.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
