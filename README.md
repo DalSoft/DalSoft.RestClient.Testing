@@ -1,5 +1,7 @@
 # DalSoft C# RestClient Testing
 
+### `If you find this repo / package useful all I ask is you please star it ⭐`
+> ### Do you or the company you work for benefit from the tools I build? <br /> If so please consider [Becoming a Sponsor](https://github.com/sponsors/dalsoft) it would be greatly appreciated ❤️
 
 * Extends DalSoft RestClient to Make testing Rest API's or anything HTTP trivial.
 * Use DalSoft RestClient with [ASP.NET Core In-Memory Test Server for integration tests](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.2).
