@@ -19,6 +19,10 @@
 PM> Install-Package DalSoft.RestClient.Testing
 ```
 
+## DalSoft.RestClient 5.0
+
+From version 5.0 DalSoft.RestClient uses [System.Text.Json](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/overview) to deserialize responses - `[JsonPropertyName]` attributes are honoured and property matching is case sensitive. If your models rely on the legacy Json.NET behaviour (`[JsonProperty]` attributes, case insensitive matching etc.) opt in to the fallback with `new Config().UseNewtonsoftJson()` - see the [DalSoft.RestClient readme](https://github.com/DalSoft/DalSoft.RestClient) for the breaking changes.
+
 ## Using the Verify extension method to fluently test anything HTTP.
 
 
@@ -36,6 +40,13 @@ public async Task GetUser_ProvidingAValidUserId_ReturnsExpectedResponse()
 		.Verify<User>(user => user.Username == "Bret") // Verify by casting to your model
 		.Verify(o => o.username == "Bret") // Verify dynamically
 		.Verify(o => o.HttpResponseMessage.IsSuccessStatusCode); // Verify dynamically
+}
+
+public class User
+{
+	// From 5.0 RestClient uses System.Text.Json which matches case sensitively, so map the property names
+	[JsonPropertyName("username")]
+	public string Username { get; set; }
 }
 ```
 
@@ -136,7 +147,7 @@ public class MockRestClientFactory : IRestClientFactory
 
 ## Supported Platforms
 
-RestClient targets .NET Standard 2.0 therefore **supports Windows, Linux, Mac and Xamarin (iOS, Android and UWP)**.
+RestClient targets .NET Standard 2.0 and .NET 8.0 therefore **supports Windows, Linux, Mac and Xamarin (iOS, Android and UWP)**.
 
-TestServer and WebApplicationFactory works with .NET Core  3.1 - .NET 6.0
+DalSoft.RestClient.Testing targets .NET 8.0 - TestServer and WebApplicationFactory works with .NET 8.0 onwards
 

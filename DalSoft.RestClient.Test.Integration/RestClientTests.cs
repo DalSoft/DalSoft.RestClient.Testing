@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using DalSoft.RestClient.Examples;
 using DalSoft.RestClient.Testing;
@@ -24,9 +25,17 @@ namespace DalSoft.RestClient.Test.Integration
 
         public class User
         {
+            // From 5.0 RestClient uses System.Text.Json which matches case sensitively, so map the property names
+            [JsonPropertyName("id")]
             public int Id { get; set; }
+
+            [JsonPropertyName("name")]
             public string Name { get; set; }
+
+            [JsonPropertyName("username")]
             public string Username { get; set; }
+
+            [JsonPropertyName("email")]
             public string Email { get; set; }
         }
     }
