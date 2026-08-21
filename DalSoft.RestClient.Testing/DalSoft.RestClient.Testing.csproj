@@ -4,7 +4,7 @@
     <Description>
       Use DalSoft.RestClient with ASP.NET Core In-Memory Test Server for integration tests.
     </Description>
-    <VersionPrefix>5.0.0</VersionPrefix>
+    <VersionPrefix>5.1.0</VersionPrefix>
     <TargetFrameworks>net8.0</TargetFrameworks>
     <AssemblyName>DalSoft.RestClient.Testing</AssemblyName>
     <PackageId>DalSoft.RestClient.Testing</PackageId>
@@ -12,8 +12,7 @@
     <Owners>DalSoft</Owners>
     <Authors>DalSoft</Authors>
     <PackageReleaseNotes>
-      * Upgraded to DalSoft.RestClient 5.0.0 which uses System.Text.Json by default - see the DalSoft.RestClient release notes for the breaking changes.
-      * Updated to target net8.0
+      * Upgraded to DalSoft.RestClient 5.1.0 - see the DalSoft.RestClient release notes for the breaking changes.
     </PackageReleaseNotes>
     <PackageIconUrl>https://dalsoft.co.uk/images/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/DalSoft/DalSoft.RestClient.Testing</PackageProjectUrl>
@@ -22,7 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DalSoft.RestClient" Version="5.0.0" />
+    <PackageReference Include="DalSoft.RestClient" Version="5.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.29" />
   </ItemGroup>
 
